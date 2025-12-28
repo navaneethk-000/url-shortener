@@ -1,6 +1,6 @@
 # Full-Stack URL Shortener
 
-A production-ready URL shortener featuring user authentication, link analytics, QR code generation, and custom aliases. Built with **Golang**, **Nuxt 4**, and **Docker**.
+URL shortener app featuring user authentication, link analytics, QR code generation, and custom aliases. Built with **Golang**, **Nuxt 4**, and **Docker**.
 
 ## Tech Stack
 
