@@ -1,0 +1,58 @@
+services:
+  postgres:
+    image: postgres:15-alpine
+    container_name: url_db
+    restart: always
+    environment:
+      POSTGRES_USER: ${DB_USER}
+      POSTGRES_PASSWORD: ${DB_PASSWORD}
+      POSTGRES_DB: ${DB_NAME}
+    ports:
+      - "5432:5432"
+    volumes:
+      - db_data:/var/lib/postgresql/data
+    networks:
+      - app_network
+
+  backend:
+    build: ./url-shortener-backend
+    container_name: url_api
+    restart: always
+    depends_on:
+      - postgres
+    environment:
+      DB_HOST: postgres
+      DB_USER: ${DB_USER}
+      DB_PASSWORD: ${DB_PASSWORD}
+      DB_NAME: ${DB_NAME}
+      DB_PORT: 5432
+      # APP CONFIG
+      JWT_SECRET: ${JWT_SECRET}
+      BASE_URL: ${BASE_URL}
+      PORT: 8080
+    ports:
+      - "8080:8080"
+    networks:
+      - app_network
+
+  frontend:
+    build:
+      context: ./url-shortener-frontend
+      args:
+        NUXT_PUBLIC_API_BASE: ${NUXT_PUBLIC_API_BASE}
+    container_name: url_ui
+    restart: always
+    ports:
+      - "80:80"
+    depends_on:
+      - backend
+    networks:
+      - app_network
+
+volumes:
+  db_data:
+
+
+networks:
+  app_network:
+    driver: bridge
