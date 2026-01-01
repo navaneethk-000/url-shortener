@@ -1,6 +1,0 @@
-[submodule "url-shortener-frontend"]
-	path = url-shortener-frontend
-	url = https://github.com/navaneethk-000/url-shortener-frontend
-[submodule "url-shortener-backend"]
-	path = url-shortener-backend
-	url = https://github.com/navaneethk-000/url-shortener-backend
