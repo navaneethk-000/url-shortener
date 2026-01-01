@@ -15,7 +15,7 @@ services:
       - app_network
 
   backend:
-    build: ./url-shortener-backend
+    build: ./backend
     container_name: url_api
     restart: always
     depends_on:
@@ -39,7 +39,7 @@ services:
 
   frontend:
     build:
-      context: ./url-shortener-frontend
+      context: ./frontend
       args:
         NUXT_PUBLIC_API_BASE: ${NUXT_PUBLIC_API_BASE}
     container_name: url_ui
