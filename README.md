@@ -82,6 +82,16 @@ docker compose up --build
 
 Once the containers are running, you can access the project components as follows:
 
-**User Dashboard (Frontend):** - Open your browser and go to: \`http://localhost\` - (If you used your LAN IP in \`.env\`, use \`http://<YOUR_IP>\`)
-**QR Code Testing:** - Ensure your phone is on the **same Wi-Fi** as your laptop. - Scan the QR code generated in the dashboard. It will redirect you to the long URL via your local machine's IP.
-EOF
+## USER DASHBOARD (FRONTEND)
+
+• Open your browser and visit:
+http://localhost
+
+• If you used your LAN IP in `.env`, use:
+http://<YOUR_IP>
+
+## QR CODE TESTING
+
+• Ensure your phone is connected to the SAME Wi-Fi network as your laptop
+• Scan the QR code generated in the dashboard
+• You will be redirected to the long URL via your local machine's IP
