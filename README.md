@@ -95,3 +95,13 @@ http://<YOUR_IP>
 • Ensure your phone is connected to the SAME Wi-Fi network as your laptop
 • Scan the QR code generated in the dashboard
 • You will be redirected to the long URL via your local machine's IP
+
+## Testing Geolocation
+
+Since the project runs locally, the backend identifies all requests as `127.0.0.1` (localhost). To test if the Geo-Location tracking works for different countries, you can simulate a request from a specific IP using the `X-Forwarded-For` header.
+
+**Example: Simulate a request from Japan (202.232.2.2)**
+
+```bash
+curl -v -H "X-Forwarded-For: 202.232.2.2" http://localhost:8080/shortcode
+```
