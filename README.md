@@ -69,3 +69,19 @@ FRONTEND_PORT=80
 # This must point to the Backend API URL
 NUXT_PUBLIC_API_BASE=http://localhost:8080
 ```
+
+## Build & Run
+
+Run the following command to build images and start the containers.
+
+```bash
+docker compose up --build
+```
+
+## How to Access the Website
+
+Once the containers are running, you can access the project components as follows:
+
+**User Dashboard (Frontend):** - Open your browser and go to: \`http://localhost\` - (If you used your LAN IP in \`.env\`, use \`http://<YOUR_IP>\`)
+**QR Code Testing:** - Ensure your phone is on the **same Wi-Fi** as your laptop. - Scan the QR code generated in the dashboard. It will redirect you to the long URL via your local machine's IP.
+EOF
